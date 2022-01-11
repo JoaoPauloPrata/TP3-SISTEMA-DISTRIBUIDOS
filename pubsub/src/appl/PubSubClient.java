@@ -77,7 +77,7 @@ public class PubSubClient {
                 subscriber = new Client(brokerAddress, brokerPort);
                 subscriber.sendReceive(msgBroker);
                 
-                // guardar address e porta globalmente na classe para nao ter que perguntar sempre se é backup
+                // guardar address e porta globalmente na classe para nao ter que perguntar sempre se Ã© backup
                 this.primaryAddress = brokerAddress;
                 this.primaryPort = brokerPort;
             }
@@ -109,7 +109,7 @@ public class PubSubClient {
                 subscriber = new Client(brokerAddress, brokerPort);
                 subscriber.sendReceive(msgBroker);
                 
-                // guardar address e porta globalmente na classe para nao ter que perguntar sempre se é backup
+                // guardar address e porta globalmente na classe para nao ter que perguntar sempre se Ã© backup
                 this.primaryAddress = brokerAddress;
                 this.primaryPort = brokerPort;
             }
@@ -144,15 +144,13 @@ public class PubSubClient {
 	            publisher = new Client(brokerAddress, brokerPort);
 	            publisher.sendReceive(msgPub);
 	            
-	            // guardar address e porta globalmente na classe para nao ter que perguntar sempre se é backup
+	            // guardar address e porta globalmente na classe para nao ter que perguntar sempre se Ã© backup
                 this.primaryAddress = brokerAddress;
                 this.primaryPort = brokerPort;
 	        }
         } catch (Exception e) {
         	System.out.println(e);
-        	// Teste: rodar portas 8080 e 8081; cancelar 8080
-        	// Vai dar erro pq joubert nao conectar a porta 8080
-        	
+        
         	System.out.println("\nTrying to publish on backup...");
         	
         	Client subscriber = new Client(backupAddress, getBackup(backupPort));
