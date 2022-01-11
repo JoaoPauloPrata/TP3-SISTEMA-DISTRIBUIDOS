@@ -17,7 +17,7 @@ public class Broker {
 
         //System.out.print("Enter the secondary Broker address: ");
         //String secondAddress = reader.next();
-        String secondAddress = "localhost";
+        String secondAddress = "10.128.0.5";
 
         System.out.print("Enter the secondary Broker port number: ");
         int secondPort = reader.nextInt();
