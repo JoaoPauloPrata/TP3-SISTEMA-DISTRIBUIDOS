@@ -14,17 +14,17 @@ public class OneAppl {
 
     public OneAppl(boolean flag) {
     	
-        PubSubClient joubert = new PubSubClient("localhost", 8082);
-        PubSubClient debora = new PubSubClient("localhost", 8083);
-        PubSubClient jonata = new PubSubClient("localhost", 8084);
+        PubSubClient joubert = new PubSubClient("10.128.0.4 ", 8082);
+        PubSubClient debora = new PubSubClient("10.128.0.4 ", 8083);
+        PubSubClient jonata = new PubSubClient("10.128.0.4 ", 8084);
        
-        joubert.subscribe("localhost", 8080);
-        debora.subscribe("localhost", 8080);
-        jonata.subscribe("localhost", 8081);
+        joubert.subscribe("10.128.0.2", 8080);
+        debora.subscribe("10.128.0.2", 8080);
+        jonata.subscribe("10.128.0.2", 8081);
         
-        Thread accessOne = new ThreadWrapper(joubert, "access Joubert- var x", "localhost", 8080);
-        Thread accessTwo = new ThreadWrapper(debora, "access Debora- var x", "localhost", 8080);
-        Thread accessThree = new ThreadWrapper(jonata, "access Jonata- var x", "localhost", 8081);
+        Thread accessOne = new ThreadWrapper(joubert, "access Joubert- var x", "10.128.0.2", 8080);
+        Thread accessTwo = new ThreadWrapper(debora, "access Debora- var x", "10.128.0.2", 8080);
+        Thread accessThree = new ThreadWrapper(jonata, "access Jonata- var x", "10.128.0.2", 8081);
                
         accessOne.start();
         accessTwo.start();
@@ -70,9 +70,9 @@ public class OneAppl {
         System.out.println();
               
         
-        joubert.unsubscribe("localhost", 8080);
-        debora.unsubscribe("localhost", 8080);
-        jonata.unsubscribe("localhost", 8080);
+        joubert.unsubscribe("10.128.0.2", 8080);
+        debora.unsubscribe("10.128.0.2", 8080);
+        jonata.unsubscribe("10.128.0.2", 8080);
 
         joubert.stopPubSubClient();
         debora.stopPubSubClient();
