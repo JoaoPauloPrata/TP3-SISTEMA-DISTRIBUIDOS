@@ -16,15 +16,15 @@ public class OneAppl {
     	
         PubSubClient joubert = new PubSubClient("10.128.0.4 ", 8082);
         PubSubClient debora = new PubSubClient("10.128.0.4 ", 8083);
-        PubSubClient jonata = new PubSubClient("10.128.0.5 ", 8084);
+        PubSubClient jonata = new PubSubClient("10.128.0.4 ", 8084);
        
         joubert.subscribe("10.128.0.2", 8080);
         debora.subscribe("10.128.0.2", 8080);
-        jonata.subscribe("10.128.0.2", 8081);
+        jonata.subscribe("10.128.0.5", 8081);
         
         Thread accessOne = new ThreadWrapper(joubert, "access Joubert- var x", "10.128.0.2", 8080);
         Thread accessTwo = new ThreadWrapper(debora, "access Debora- var x", "10.128.0.2", 8080);
-        Thread accessThree = new ThreadWrapper(jonata, "access Jonata- var x", "10.128.0.2", 8081);
+        Thread accessThree = new ThreadWrapper(jonata, "access Jonata- var x", "10.128.0.5", 8081);
                
         accessOne.start();
         accessTwo.start();
@@ -72,7 +72,7 @@ public class OneAppl {
         
         joubert.unsubscribe("10.128.0.2", 8080);
         debora.unsubscribe("10.128.0.2", 8080);
-        jonata.unsubscribe("10.128.0.2", 8080);
+        jonata.unsubscribe("10.128.0.5", 8080);
 
         joubert.stopPubSubClient();
         debora.stopPubSubClient();
