@@ -28,7 +28,7 @@ public class PubSubClient {
         //otherwise the other constructor must be called
     	this.primaryAddress = "";
 		this.primaryPort = 0;
-		this.backupAddress = "10.128.0.2";
+		this.backupAddress = "10.128.0.5";
 		this.backupPort = 0;
     }
 
@@ -38,7 +38,7 @@ public class PubSubClient {
         
         this.primaryAddress = "";
 		this.primaryPort = 0;
-		this.backupAddress = "10.128.0.2";
+		this.backupAddress = "10.128.0.5";
 		this.backupPort = 0;
 		
         observer = new Server(clientPort);
