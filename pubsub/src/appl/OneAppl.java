@@ -14,9 +14,9 @@ public class OneAppl {
 
     public OneAppl(boolean flag) {
     	
-        PubSubClient joubert = new PubSubClient("10.128.0.4 ", 8082);
-        PubSubClient debora = new PubSubClient("10.128.0.4 ", 8083);
-        PubSubClient jonata = new PubSubClient("10.128.0.4 ", 8084);
+        PubSubClient joubert = new PubSubClient("10.128.0.4", 8082);
+        PubSubClient debora = new PubSubClient("10.128.0.4", 8083);
+        PubSubClient jonata = new PubSubClient("10.128.0.4", 8084);
        
         joubert.subscribe("10.128.0.2", 8080);
         debora.subscribe("10.128.0.2", 8080);
